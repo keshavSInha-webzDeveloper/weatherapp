@@ -12,6 +12,7 @@ const viewPath=path.join(__dirname,'../Myviews/views');
 const partialsPath=path.join(__dirname,'../Myviews/partials')
 
 const app=express();
+const port=process.env.PORT || 3000;
 
 // Template engine setting
 app.set('view engine','hbs');
@@ -71,22 +72,6 @@ app.get('/weather',(req,res)=>{
     })
 })
 
-// app.get('/products',(req,res)=>{
-//     if(!req.query.id){
-//         return res.send({
-//             error:"Id is required"
-//         })
-//     }
-    
-//     res.send({
-//         name:req.query.id,
-//         price:"20,000"
-//     })
-   
-
-    
-// })
-
 
 app.get('/contact',(req,res)=>{
     res.render('contact',{
@@ -105,6 +90,6 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
-    console.log('Server is Up Now');
+app.listen(port,()=>{
+    console.log('Server is Up Now with Post '+ port);
 })

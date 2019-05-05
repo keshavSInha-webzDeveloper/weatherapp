@@ -7,7 +7,7 @@ function search(){
     document.querySelector('#k2').textContent="";
    searchInput=document.getElementById('inputValue').value
 
-   fetch("http://localhost:3000/weather?address="+searchInput).then((result)=>{
+   fetch("/weather?address="+searchInput).then((result)=>{
     result.json().then((response)=>{
 
         
